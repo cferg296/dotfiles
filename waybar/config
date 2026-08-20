@@ -152,7 +152,7 @@
         "exec": "checkupdates | wc -l",
         "exec-if": "[[ $(checkupdates | wc -l) != 0 ]]",
         "interval": 15,
-        "on-click": "kitty -e ~/.config/scripts/update.sh"
+        "on-click": "kitty -e ~/Scripts/update.sh"
     },
 }
 
