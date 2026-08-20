@@ -1,0 +1,158 @@
+{
+	"layer": "top",
+	"modules-left": ["custom/launcher","cpu","memory","network"],
+	"modules-center": ["hyprland/workspaces"],
+	"modules-right": ["custom/updates","custom/vpn","pulseaudio","clock", "battery","custom/power"],
+	
+	"pulseaudio": {
+		"tooltip": false,
+		"scroll-step	": 5,
+		"format": "{icon} {volume}%",
+		"format-muted": "{icon} {volume}%",
+		"on-click":"better-control",
+		"on-click-right":"pactl set-sink-mute @DEFAULT_SINK@ toggle",
+		"format-icons": {
+			"default": ["", "", ""]
+		}
+	},
+    "hyprland/workspaces": {
+		"num-tags": 31,
+        "format": "{icon}",
+        "format-icons": {
+        	"11": "1",
+			"12": "2",
+        	"13": "3",    
+			"14": "4",
+			"15": "5",
+        	"16": "6",
+			"17": "7",
+        	"18": "8",    
+			"19": "9",
+			"20": "10",
+        	"21": "1",
+			"22": "2",
+        	"23": "3",    
+			"24": "4",
+			"25": "5",
+        	"26": "6",
+			"27": "7",
+        	"28": "8",    
+			"29": "9",
+			"30": "10",
+			"31": "1",
+        }
+    },
+   "network": {	
+		"interval": 1,
+		"format": "{ifname}",
+		"format-wifi": "{icon} ({signalStrength}%) |  {bandwidthDownBytes}  {bandwidthUpBytes}",
+		"format-ethernet": "  |  {bandwidthDownBytes}  {bandwidthUpBytes}",
+		"format-disconnected": "󰌙", //An empty format will hide the module.
+		"tooltip-format-wifi": "{essid} {icon} ({signalStrength}%)",
+		"tooltip-format-ethernet": "{ifname}  ",
+		"tooltip-format-disconnected": "Disconnected",
+		"on-click":"better-control",
+		"max-length": 30,
+		"format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
+   },
+
+    "battery": {
+		"interval": 5,
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 20,
+        },
+        "format": "{icon}  {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-icons": ["", "", "", "", ""],
+		"on-click":"better-control",
+    },
+    "clock": {
+		"interval": 1,
+		"timezone": "America/Indiana/Indianapolis",
+        "format": "{:%OI:%M:%OS %p}  ",
+        "format-alt": "{:%A %B %d, %Y %OI:%M:%OS %p}  ",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+                    "mode"          : "year",
+                    "mode-mon-col"  : 3,
+                    "weeks-pos"     : "right",    "clock": {
+        "format": "{:%H:%M}  ",
+        "format-alt": "{:%A, %B %d, %Y (%R)}  ",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+                    "mode"          : "year",
+                    "mode-mon-col"  : 3,
+                    "weeks-pos"     : "right",
+                    "on-scroll"     : 1,
+                    "format": {
+                              "months":     "<span color='#ffead3'><b>{}</b></span>",
+                              "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                              "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                              "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                              "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+                              }
+                    },
+        "actions":  {
+                    "on-click-right": "mode",
+                    "on-click-forward": "tz_up",
+                    "on-click-backward": "tz_down",
+                    "on-scroll-up": "shift_up",
+                    "on-scroll-down": "shift_down"
+                    }
+    },
+                    "on-scroll"     : 1,
+                    "format": {
+                              "months":     "<span color='#ffead3'><b>{}</b></span>",
+                              "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                              "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                              "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                              "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+                              }
+                    },
+        "actions":  {
+                    "on-click-right": "mode",
+                    "on-click-forward": "tz_up",
+                    "on-click-backward": "tz_down",
+                    "on-scroll-up": "shift_up",
+                    "on-scroll-down": "shift_down"
+                    }
+    },
+    "cpu": {
+        "interval": 15,
+        "format": " {}%",
+        "max-length": 10
+    },
+    "memory": {
+        "interval": 30,
+        "format": " {}%",
+        "max-length": 10
+    },
+	"custom/vpn": { //must use wireguard, NOT openvpn
+       "interval": 1,
+       "format": "{}",
+       "exec": "ip add show | grep -qF wg0 && echo  Connected || echo   Disconnected",
+       "max-length": "100",
+       "on-click": "mullvad connect",
+       "on-click-right": "mullvad disconnect"
+    },
+    "custom/launcher":{
+        "format": " ",
+        "on-click": "bash ~/.config/rofi/launchers/type-4/launcher.sh",
+        "on-click-right": "killall ~/.config/rofi/launcher/type-4/launcher.sh"
+    },
+    "custom/power":{
+        "format": " ",
+        "on-click": "bash ~/.config/rofi/powermenu/type-1/powermenu.sh"
+    },
+    "custom/updates":{
+        "format": "{} Update(s)",
+        "exec": "checkupdates | wc -l",
+        "exec-if": "[[ $(checkupdates | wc -l) != 0 ]]",
+        "interval": 15,
+        "on-click": "kitty -e ~/.config/scripts/update.sh"
+    },
+}
+

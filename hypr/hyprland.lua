@@ -1,0 +1,7 @@
+require("hyprland/general/keybindings")
+require("hyprland/general/detect")
+require("hyprland/general/rules")
+require("hyprland/general/startups")
+require("hyprland/general/environment")
+require("hyprland/general/behavior")
+require("hyprland/general/eco")

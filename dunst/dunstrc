@@ -1,0 +1,8 @@
+[global]
+monitor = 2
+frame_color = "#E0E0E0"
+separator_color = frame
+frame_width = 2
+background = "#151515"
+foreground = "#E0E0E0"
+font = JetBrainsMono Nerd Font Mono Regular 11
