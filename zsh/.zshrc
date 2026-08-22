@@ -57,3 +57,5 @@ alias ex="javac *.java && java Main"
 
 export EDITOR="nvim"
 export VISUAL="nvim"
+
+export PATH="$HOME/.config/emacs/bin:$PATH"
