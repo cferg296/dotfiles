@@ -48,7 +48,6 @@ alias english="trans"
 alias spanish="trans -t es"
 alias age="sudo tune2fs -l /dev/nvme1n1p1"
 alias dsync="~/.config/emacs/bin/doom sync"
-alias ex="javac *.java && java Main"
 
 ## [Completion]
 ## Completion scripts setup. Remove the following line to uninstall
