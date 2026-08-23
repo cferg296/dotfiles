@@ -3,7 +3,7 @@
 (custom-theme-set-faces! 'jbeans
   '(default :background "#151515"))
 
-(setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 15))
+(setq doom-font (font-spec :family "jetbrains mono nerd font" :size 15))
 
 (after! centaur-tabs
   (setq centaur-tabs-buffer-groups-function
@@ -109,3 +109,5 @@
       "o n" #'neotree-toggle)
 
 (setq confirm-kill-emacs nil)
+
+
