@@ -3,7 +3,7 @@
 (custom-theme-set-faces! 'jbeans
   '(default :background "#151515"))
 
-(setq doom-font (font-spec :family "jetbrains mono nerd font" :size 15))
+(setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 15))
 
 (after! centaur-tabs
   (setq centaur-tabs-buffer-groups-function
@@ -110,4 +110,12 @@
 
 (setq confirm-kill-emacs nil)
 
+(after! demap
+  (defun my/demap-auto-open ()
+    (when buffer-file-name
+      (demap-open)))
 
+  (add-hook 'doom-switch-buffer-hook #'my/demap-auto-open))
+
+(setq window-divider-default-right-width 0
+      window-divider-default-bottom-width 0)
