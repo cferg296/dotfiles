@@ -54,17 +54,18 @@
   '(line-number :background "#151515")
   '(line-number-current-line :background "#151515"))
 
-(defun my/vterm-here ()
+(defun my/open-floating-terminal ()
   (interactive)
-  (let ((default-directory
-        (if buffer-file-name
-            (file-name-directory buffer-file-name)
-          default-directory)))
-    (vterm)
-    (delete-other-windows)))
-  (map! :leader
-        :desc "Terminal here"
-        "o t" #'my/vterm-here)
+  (start-process
+   "floating-terminal"
+   nil
+   "kitty"
+   "--class" "emacs-terminal"
+   "--directory" default-directory))
+
+(map! :leader
+      :desc "Floating terminal"
+      "o t" #'my/open-floating-terminal)
 
 (after! lsp-ui
   (setq lsp-ui-sideline-enable nil))
