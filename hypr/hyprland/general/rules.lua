@@ -72,6 +72,7 @@ hl.window_rule({
     size = { 1750, 900 }
 })
 
+--Use for terminal from within emacs
 hl.window_rule({
     match = {
         class = "emacs-terminal"
@@ -80,3 +81,5 @@ hl.window_rule({
     center = true,
     size = { 1750, 900 },
 })
+
+
