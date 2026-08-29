@@ -93,3 +93,14 @@ hl.window_rule({
     size = { 900, 600 },
     center = true;
 })
+
+--creates a floating window when opening an image with imv
+hl.window_rule({
+    name = "imv",
+    match = {
+      class = "imv",
+    },
+    float = true;
+    monitor = "DP-1",
+    center = true,
+})
