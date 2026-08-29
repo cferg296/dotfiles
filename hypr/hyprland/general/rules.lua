@@ -81,3 +81,15 @@ hl.window_rule({
     center = true,
     size = { 1750, 900 },
 })
+
+--Limits steam special offers to a floating window rather than full-screen
+hl.window_rule({
+    name = "steam-special-offers",
+    match = {
+      class = "steam",
+      title = "Special Offers",
+    },
+    float = true,
+    size = { 900, 600 },
+    center = true;
+})
