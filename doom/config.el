@@ -43,6 +43,11 @@
     '(centaur-tabs-modified-marker-unselected
       :foreground "#888888")))
 
+(map! :leader
+      :prefix ("n" . "navigation")
+      :desc "Previous buffer"
+      "b" #'previous-buffer)
+
 (custom-set-faces!
   '(header-line :background "#151515" :foreground "#888888")
   '(tab-line :background "#151515" :foreground "#888888"))
