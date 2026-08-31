@@ -84,15 +84,16 @@ hl.window_rule({
 
 --Limits steam special offers to a floating window rather than full-screen
 hl.window_rule({
-    name = "steam-special-offers",
     match = {
-      class = "steam",
-      title = "Special Offers",
+        class = "steam",
+        title = "Special Offers"
     },
     float = true,
-    size = { 900, 600 },
-    center = true;
+    fullscreen = false,
+    center = true,
+    size = { 1200, 700 },
 })
+
 
 --creates a floating window when opening an image with imv
 hl.window_rule({
