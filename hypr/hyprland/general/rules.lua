@@ -104,3 +104,13 @@ hl.window_rule({
     monitor = "DP-1",
     center = true,
 })
+
+hl.window_rule({
+    name = "mpv",
+    match = {
+        class = "mpv",
+    },
+    float = true,
+    monitor = "DP-1",
+    center = true,
+})
