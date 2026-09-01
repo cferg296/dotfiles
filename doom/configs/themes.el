@@ -1,8 +1,11 @@
-(setq doom-theme 'jbeans)
+;;(setq doom-theme 'jbeans)
 
-(custom-theme-set-faces! 'jbeans
-  '(default :background "#151515"))
+;;(custom-theme-set-faces! 'jbeans
+;;  '(default :background "#151515"))
 
+(add-to-list 'custom-theme-load-path
+             (expand-file-name "~/dotfiles/doom/colorschemes/"))
+(setq doom-theme 'jellybeans-vim)
 
 (custom-set-faces!
   '(header-line :background "#151515" :foreground "#888888")
