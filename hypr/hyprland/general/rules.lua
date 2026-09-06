@@ -115,3 +115,11 @@ hl.window_rule({
     monitor = "DP-1",
     center = true,
 })
+
+hl.window_rule({
+    match = {
+        class = "Blockkeeper",
+        float = true
+    },
+    center = true
+})
