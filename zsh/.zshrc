@@ -1,24 +1,6 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
-source ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-[[ -s /home/conner/.zsh/autojump/etc/profile.d/autojump.sh ]] && source /home/conner/.zsh/autojump/etc/profile.d/autojump.sh
-
-        autoload -U compinit && compinit -u
-
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-source /home/conner/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-
 alias update="bash ~/Scripts/update.sh"
 alias install="yay -S"
 alias search="pacseek"
@@ -48,6 +30,7 @@ alias spanish="trans -t es"
 alias age="sudo tune2fs -l /dev/nvme1n1p1"
 alias dsync="~/.config/emacs/bin/doom sync"
 alias paper="~/Scripts/wallpaper.sh"
+alias java="$HOME/Scripts/jrun.sh"
 
 ## [Completion]
 ## Completion scripts setup. Remove the following line to uninstall
@@ -58,3 +41,20 @@ export EDITOR="nvim"
 export VISUAL="nvim"
 
 export PATH="$HOME/.config/emacs/bin:$PATH"
+
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+source ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+[[ -s /home/conner/.zsh/autojump/etc/profile.d/autojump.sh ]] && source /home/conner/.zsh/autojump/etc/profile.d/autojump.sh
+
+        autoload -U compinit && compinit -u
+
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+source /home/conner/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
