@@ -107,9 +107,9 @@ hl.window_rule({
 })
 
 hl.window_rule({
-    name = "mpv",
+    name = "vlc",
     match = {
-        class = "mpv",
+        class = "vlc",
     },
     float = true,
     monitor = "DP-1",
