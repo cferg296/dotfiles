@@ -14,6 +14,7 @@ local office = "libreoffice --writer"
 local games = "steam"
 local talk = "discord"
 local code = "emacs"
+local update = "~/Scripts/update.sh"
 
 -- Program launchers
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal))
@@ -32,7 +33,7 @@ hl.bind(
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(monitor))
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(office))
 hl.bind(mainMod .. " + S", hl.dsp.exec_cmd(games))
-hl.bind(mainMod .. " + U", hl.dsp.exec_cmd(talk))
+hl.bind(mainMod .. " + U", hl.dsp.exec_cmd("kitty -e " .. update))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(code))
 
 
